@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologia em Dados - Guia Completo</title>
+    <style>
+        /* Reset e configurações gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Navegação */
+        nav {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 1rem 0;
+        }
+        
+        nav li {
+            margin: 0 1.5rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #2a5298;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #1e3c72;
+        }
+        
+        /* Seções */
+        section {
+            padding: 4rem 0;
+            background-color: #fff;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        section:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: #1e3c72;
+            font-size: 2rem;
+        }
+        
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Cards */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        /* Tabelas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e1e5eb;
+        }
+        
+        th {
+            background-color: #1e3c72;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        
+        /* Listas */
+        ul {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Destaques */
+        .highlight {
+            background-color: #e8f0fe;
+            border-left: 4px solid #1e3c72;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Tecnologia em Dados</h1>
+            <p>Guia completo para ingressar na área mais promissora da tecnologia</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#corte">Notas de Corte</a></li>
+            <li><a href="#mensalidade">Mensalidades</a></li>
+            <li><a href="#requisitos">O que preciso saber</a></li>
+            <li><a href="#dicas">Dicas</a></li>
+            <li><a href="#salario">Salários</a></li>
+            <li><a href="#mercado">Mercado</a></li>
+            <li><a href="#estagio">Estágios</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <section id="corte">
+            <h2 class="section-title">Notas de Corte do ENEM</h2>
+            <div class="content">
+                <p>Confira as notas de corte aproximadas para o curso de Tecnologia em Dados em algumas instituições públicas:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Instituição</th>
+                            <th>Nota de Corte (2023)</th>
+                            <th>Turno</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>IFSP - São Paulo</td>
+                            <td>720</td>
+                            <td>Integral</td>
+                        </tr>
+                        <tr>
+                            <td>UTFPR - Curitiba</td>
+                            <td>690</td>
+                            <td>Vespertino</td>
+                        </tr>
+                        <tr>
+                            <td>UFRJ - Rio de Janeiro</td>
+                            <td>710</td>
+                            <td>Integral</td>
+                        </tr>
+                        <tr>
+                            <td>UFMG - Belo Horizonte</td>
+                            <td>705</td>
+                            <td>Noturno</td>
+                        </tr>
+                        <tr>
+                            <td>UNB - Brasília</td>
+                            <td>698</td>
+                            <td>Vespertino</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight">
+                    <p><strong>Importante:</strong> As notas de corte variam a cada ano dependendo da demanda e do número de vagas. Consulte sempre o site oficial do SISU para informações atualizadas.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="mensalidade">
+            <h2 class="section-title">Mensalidades em Faculdades Particulares</h2>
+            <div class="content">
+                <p>Valores médios de mensalidade para o curso de Tecnologia em Dados em instituições privadas:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Instituição</th>
+                            <th>Mensalidade (R$)</th>
+                            <th>Duração</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FIAP</td>
+                            <td>R$ 1.800,00</td>
+                            <td>2 anos</td>
+                        </tr>
+                        <tr>
+                            <td>PUC (várias localidades)</td>
+                            <td>R$ 1.500,00</td>
+                            <td>2,5 anos</td>
+                        </tr>
+                        <tr>
+                            <td>Anhembi Morumbi</td>
+                            <td>R$ 1.200,00</td>
+                            <td>2 anos</td>
+                        </tr>
+                        <tr>
+                            <td>UniCesumar</td>
+                            <td>R$ 850,00</td>
+                            <td>2 anos</td>
+                        </tr>
+                        <tr>
+                            <td>Cruzeiro do Sul Virtual</td>
+                            <td>R$ 450,00</td>
+                            <td>2 anos</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight">
+                    <p><strong>Dica:</strong> Muitas instituições oferecem bolsas parciais e descontos para pagamento antecipado. Sempre consulte o programa de bolsas da faculdade.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="requisitos">
+            <h2 class="section-title">O que preciso saber para entrar na área</h2>
+            <div class="content">
+                <div class="card-container">
+                    <div class="card">
+                        <h3>Conhecimentos Técnicos</h3>
+                        <ul>
+                            <li>Lógica de programação</li>
+                            <li>Banco de dados (SQL)</li>
+                            <li>Estatística básica</li>
+                            <li>Excel intermediário/avançado</li>
+                            <li>Python ou R (diferencial)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Habilidades Comportamentais</h3>
+                        <ul>
+                            <li>Pensamento analítico</li>
+                            <li>Capacidade de resolver problemas</li>
+                            <li>Comunicação clara</li>
+                            <li>Trabalho em equipe</li>
+                            <li>Curiosidade intelectual</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Pré-requisitos Acadêmicos</h3>
+                        <ul>
+                            <li>Ensino Médio completo</li>
+                            <li>Nota do ENEM (para universidades públicas)</li>
+                            <li>Vestibular próprio (algumas particulares)</li>
+                            <li>Conhecimento em matemática</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="dicas">
+            <h2 class="section-title">Dicas para ingressar na área</h2>
+            <div class="content">
+                <div class="card-container">
+                    <div class="card">
+                        <h3>Antes da Faculdade</h3>
+                        <ul>
+                            <li>Faça cursos online de introdução à programação</li>
+                            <li>Pratique matemática e lógica</li>
+                            <li>Participe de comunidades de tecnologia</li>
+                            <li>Desenvolva projetos simples com dados abertos</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Durante a Faculdade</h3>
+                        <ul>
+                            <li>Participe de projetos extracurriculares</li>
+                            <li>Faça networking com professores e colegas</li>
+                            <li>Busque estágios desde o primeiro ano</li>
+                            <li>Participe de maratonas de programação</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Para se destacar</h3>
+                        <ul>
+                            <li>Crie um portfólio no GitHub</li>
+                            <li>Obtenha certificações relevantes</li>
+                            <li>Acompanhe as tendências do mercado</li>
+                            <li>Domine o inglês técnico</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="salario">
+            <h2 class="section-title">Salários na Área de Dados</h2>
+            <div class="content">
+                <p>Média salarial para profissionais de tecnologia em dados no Brasil:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cargo</th>
+                            <th>Salário Júnior (R$)</th>
+                            <th>Salário Pleno (R$)</th>
+                            <th>Salário Sênior (R$)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Analista de Dados</td>
+                            <td>3.500 - 5.000</td>
+                            <td>5.500 - 8.000</td>
+                            <td>9.000 - 15.000</td>
+                        </tr>
+                        <tr>
+                            <td>Cientista de Dados</td>
+                            <td>5.000 - 7.000</td>
+                            <td>8.000 - 12.000</td>
+                            <td>13.000 - 20.000</td>
+                        </tr>
+                        <tr>
+                            <td>Engenheiro de Dados</td>
+                            <td>4.500 - 6.500</td>
+                            <td>7.500 - 11.000</td>
+                            <td>12.000 - 18.000</td>
+                        </tr>
+                        <tr>
+                            <td>Especialista em BI</td>
+                            <td>4.000 - 6.000</td>
+                            <td>7.000 - 10.000</td>
+                            <td>11.000 - 16.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight">
+                    <p><strong>Observação:</strong> Os valores podem variar significativamente dependendo da região, porte da empresa e experiência do profissional.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="mercado">
+            <h2 class="section-title">Situação do Mercado de Trabalho</h2>
+            <div class="content">
+                <div class="card-container">
+                    <div class="card">
+                        <h3>Demanda</h3>
+                        <p>O mercado de tecnologia em dados está em alta expansão, com crescimento estimado de 30% ao ano. Empresas de todos os setores buscam profissionais qualificados para transformar dados em insights estratégicos.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Oportunidades</h3>
+                        <p>Setores como finanças, saúde, varejo e tecnologia são os que mais contratam. Há oportunidades em empresas de todos os portes, desde startups até grandes corporações.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Tendências</h3>
+                        <p>Inteligência Artificial, Machine Learning e Big Data continuam sendo as áreas mais promissoras. A análise de dados em tempo real e a governança de dados também ganham importância.</p>
+                    </div>
+                </div>
+                
+                <div class="highlight">
+                    <p><strong>Perspectiva:</strong> A área de tecnologia em dados é considerada uma das mais promissoras para os próximos anos, com projeção de criação de mais de 100 mil vagas até 2025 no Brasil.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="estagio">
+            <h2 class="section-title">Estágios na Área de Dados</h2>
+            <div class="content">
+                <div class="card-container">
+                    <div class="card">
+                        <h3>Oportunidades</h3>
+                        <ul>
+                            <li>Estágio em Análise de Dados</li>
+                            <li>Estágio em Business Intelligence</li>
+                            <li>Estágio em Ciência de Dados</li>
+                            <li>Estágio em Engenharia de Dados</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Salários de Estágio</h3>
+                        <ul>
+                            <li>Média nacional: R$ 1.500 - R$ 2.500</li>
+                            <li>Grandes centros: R$ 2.000 - R$ 3.000</li>
+                            <li>Empresas de tecnologia: R$ 2.500 - R$ 4.000</li>
+                            <li>Bolsa auxílio + benefícios</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Como conseguir</h3>
+                        <ul>
+                            <li>Participe de programas de trainee</li>
+                            <li>Utilize plataformas como LinkedIn, Catho e Indeed</li>
+                            <li>Participe de feiras de recrutamento</li>
+                            <li>Construa networking no setor</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="highlight">
+                    <p><strong>Dica:</strong> Muitas empresas oferecem programas de estágio que podem evoluir para efetivação. Invista em construir uma boa rede de contatos desde o início da faculdade.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>Site Informativo sobre Tecnologia em Dados</p>
+            <p>Atualizado em 2023 - Desenvolvido para fins educacionais</p>
+        </div>
+    </footer>
+</body>
+</html>
